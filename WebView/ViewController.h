@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+    
+    IBOutlet UITextField *searchField;
+    IBOutlet UIWebView *webView;
+}
+- (IBAction)back:(id)sender;
+- (IBAction)forward:(id)sender;
+- (IBAction)go:(id)sender;
+- (IBAction)share:(id)sender;
 
 @end
