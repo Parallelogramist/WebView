@@ -17,7 +17,6 @@
 - (void)viewDidLoad
 {
 	[webView loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.google.com"]]];
-    searchField.text = @"google.com";
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,6 +51,6 @@
     
     [self presentViewController:
      [[UIActivityViewController alloc] initWithActivityItems:
-      @[[NSString stringWithFormat:@"Check out this link!\nhttp://www.%@", searchField.text]] applicationActivities:nil] animated:YES completion:nil];
+      @[[NSString stringWithFormat:@"Check out this link!\n%@", webView.request.mainDocumentURL]] applicationActivities:nil] animated:YES completion:nil];
 }
 @end
