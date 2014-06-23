@@ -47,7 +47,7 @@
     [webView loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString: [NSString stringWithFormat:@"http://www.%@", searchField.text]]]];
     [searchField resignFirstResponder];
 }
-
+//share butotn method to share current page url
 - (IBAction)share:(id)sender {
     
     [self presentViewController:
