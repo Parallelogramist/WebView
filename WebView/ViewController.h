@@ -17,5 +17,7 @@
 - (IBAction)forward:(id)sender;
 - (IBAction)go:(id)sender;
 - (IBAction)share:(id)sender;
+- (IBAction)keyboardDismiss:(id)sender;
+
 
 @end

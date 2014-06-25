@@ -30,7 +30,10 @@
                                             <rect key="frame" x="16" y="7" width="257" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" keyboardAppearance="alert"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" keyboardAppearance="alert" returnKeyType="go"/>
+                                            <connections>
+                                                <action selector="keyboardDismiss:" destination="vXZ-lx-hvc" eventType="editingDidEndOnExit" id="40E-4o-jre"/>
+                                            </connections>
                                         </textField>
                                     </barButtonItem>
                                     <barButtonItem title="Go!" id="2lT-fO-Q1A">

@@ -18,6 +18,14 @@
 {
 	[webView loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.google.com"]]];
 }
+//restore saved data on app load
+-(void) viewWillAppear:(BOOL)animated{
+    searchField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"url"];
+}
+//save data on app close
+-(void)viewWillDisappear:(BOOL)animated{
+    [[NSUserDefaults standardUserDefaults] setObject:searchField.text forKey:@"url"];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -52,5 +60,14 @@
     [self presentViewController:
      [[UIActivityViewController alloc] initWithActivityItems:
       @[[NSString stringWithFormat:@"Check out this link!\n%@", webView.request.mainDocumentURL]] applicationActivities:nil] animated:YES completion:nil];
+}
+
+- (IBAction)keyboardDismiss:(id)sender {
+    [ self go:nil ];
+    [ searchField resignFirstResponder ];
+}
+
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    [self resignFirstResponder ];
 }
 @end
