@@ -18,13 +18,15 @@
 {
 	[webView loadRequest: [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.google.com"]]];
 }
+
 //restore saved data on app load
 -(void) viewWillAppear:(BOOL)animated{
-    searchField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"url"];
+    searchField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"text"];
 }
+
 //save data on app close
 -(void)viewWillDisappear:(BOOL)animated{
-    [[NSUserDefaults standardUserDefaults] setObject:searchField.text forKey:@"url"];
+    [[NSUserDefaults standardUserDefaults] setObject:searchField.text forKey:@"text"];
 }
 
 - (void)didReceiveMemoryWarning
