@@ -21,12 +21,12 @@
 
 //restore saved data on app load
 -(void) viewWillAppear:(BOOL)animated{
-    searchField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"text"];
+    searchField.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"urlText"];
 }
 
 //save data on app close
 -(void)viewWillDisappear:(BOOL)animated{
-    [[NSUserDefaults standardUserDefaults] setObject:searchField.text forKey:@"text"];
+    [[NSUserDefaults standardUserDefaults] setObject:searchField.text forKey:@"urlText"];
 }
 
 - (void)didReceiveMemoryWarning
